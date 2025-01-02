@@ -1,4 +1,4 @@
-
+import banner1 from './banner1.jpg'
 const Banner = () => {
   return (
     <>
@@ -10,10 +10,10 @@ const Banner = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src="https://images.pexels.com/photos/161276/moscow-cathedral-mosque-prospekt-mira-ramadan-sky-161276.jpeg" className="d-block w-100" alt="..." style={{height:'80vh'}}/>
+                    <img src={banner1} className="d-block w-100" alt="..." style={{height:'80vh'}}/>
                     <div className="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Some representative placeholder content for the first slide.</p>
+                        <h5>ಹಜರತ್ ಸೂಫಿ ಅಬ್ದುಲ್ ರೆಹಮಾನ್ ಶಾ ಬಾಬಾ</h5>
+                        <p>ಬೆಳಪು</p>
                     </div>
                 </div>
                 <div className="carousel-item">
