@@ -1,0 +1,7 @@
+.dropdown-item.active{
+    background-color: transparent !important;
+    color: #000 !important;
+}
+.dropdown-item:hover{
+    background-color: #faf9f9 !important;
+}

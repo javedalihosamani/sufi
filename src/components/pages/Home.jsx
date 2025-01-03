@@ -1,7 +1,12 @@
+import { useTranslation, Trans } from "react-i18next"
+
 const Home = () => {
+    const {t} = useTranslation();
+    //const {line1, line2} = t('description',{channel: "Hazrat Sufi Abdul Rehman Shah Baba"});
+    const {line1, line2} = t('description',);
   return (
     <>  
-        <div className="container mt-5">
+        {/* <div className="container mt-5">
             <div className="row my-3">
                 <div className="col-12 text-center">
                     <h1 className="display-5">ಸೂಫಿಸಂ</h1>
@@ -102,6 +107,25 @@ const Home = () => {
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7768.592751333183!2d74.76997714019777!3d13.206700120622152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bbcb194cf6247a7%3A0xc3254ee5470f15f5!2sHazrath%20Khwaja%20Sufi%20Rahmaniya%20Riyaziya%20Dargah!5e0!3m2!1sen!2sin!4v1735822372983!5m2!1sen!2sin" style={{width:'100%', height:"400px"}}  loading="lazy" ></iframe>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div> */}
+        <div className="container my-5">
+            <div className="row">
+                <div className="col">
+                    <h1>{t("greeting")}</h1>
+                    {/* <p>{line1}</p> */}
+                    <span>
+                    <Trans
+                        //i18nKey ={'description.line1'}
+                        i18nKey ={line1}
+                        values = {{
+                            channel: "Hazrat Sufi Abdul Rehman Shah Baba"
+                        }}
+                        components={{1:<b/>}}
+                    />
+                    </span>
+                    <p>{line2}</p>
                 </div>
             </div>
         </div>

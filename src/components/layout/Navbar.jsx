@@ -1,7 +1,33 @@
 import { NavLink } from "react-router-dom"
 import Banner from './../pages/Banner';
 import logo from './logo.png'
-const Navbar = () => { 
+import './Navbar.css';
+import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
+const Navbar = () => {
+  const langauges = [{
+    name:'ಕನ್ನಡ',
+    code:'kn'
+  },{
+    name:'English',
+    code:'en'
+  },{
+    name:'हिंदी',
+    code:'hi'
+  },{
+    name:'العربية',
+    code:'ar'
+  }]
+
+  const {i18n} = useTranslation();
+
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+  }
+
+  useEffect(() => {
+    document.body.dir = i18n.dir();
+  }, [i18n, i18n.language]);
   return (
     <>
         <nav className="navbar navbar-expand-lg bg-light shadow py-4">
@@ -20,14 +46,33 @@ const Navbar = () => {
                 <div className="offcanvas-body">
                   <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li className="nav-item">
-                      <NavLink className='nav-link' aria-current="page" to={`/home`}>ಮುಖಪುಟ</NavLink>
+                      <NavLink className='nav-link' aria-current="page" to={`/home`}>Home</NavLink>
                     </li> 
                     <li className="nav-item">
                       <NavLink className="nav-link" aria-current="page" to={`/create`}>Create</NavLink>
                     </li>
+                    <li className="nav-item">
+                      <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">                    
+                          <li className="nav-item dropdown">
+                              <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Select Languages
+                              </NavLink>
+                              <ul className="dropdown-menu">
+                                <li>
+                                {langauges.map((lang) => (                              
+                                  <NavLink key={lang.code}
+                                    className={lang.code === i18n.language ? 'dropdown-item active' : 'dropdown-item'}
+                                    onClick={()=>changeLanguage(lang.code)}
+                                  >{lang.name}</NavLink>                                                         
+                                ))}  
+                                </li> 
+                              </ul>
+                          </li>                                     
+                      </ul>
+                    </li>
                   </ul>
                 </div>
-                </div>
+              </div>
             </div>
         </nav>
         <Banner/>

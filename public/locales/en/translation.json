@@ -1,0 +1,7 @@
+{
+    "greeting":"Hello, Welcome!",
+    "description":{
+        "line1":"You are watching <1>{{channel}}</1> React App.",
+        "line2":"Select a language from the dropdown menu to see the translation."
+    }
+}
