@@ -7,7 +7,7 @@ function App() {
     const audio = new Audio(sounds);
     audio ? audio.play() : audio.pause();
     audio.loop = true;
-    audio.volume = 0.003;
+    audio.volume = 0.005;
   }
   useEffect(() => {playAudio()},[])
   return (
