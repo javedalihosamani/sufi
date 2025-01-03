@@ -1,9 +1,11 @@
 import { NavLink } from "react-router-dom"
-import Banner from './../pages/Banner';
+import Banner from './../pages/banner/Banner';
 import logo from './logo.png'
 import './Navbar.css';
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
+
 const Navbar = () => {
   const langauges = [{
     name:'ಕನ್ನಡ',
@@ -30,7 +32,7 @@ const Navbar = () => {
   }, [i18n, i18n.language]);
   return (
     <>
-        <nav className="navbar navbar-expand-lg bg-light shadow py-4">
+        <nav className="navbar navbar-expand-lg bg-light shadow lead">
             <div className="container">
                 <NavLink className="navbar-brand" to={`/`}>
                 <img src={logo} alt="" />
@@ -44,7 +46,7 @@ const Navbar = () => {
                     <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div className="offcanvas-body">
-                  <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <ul className="navbar-nav justify-content-end flex-grow-1">
                     <li className="nav-item">
                       <NavLink className='nav-link' aria-current="page" to={`/home`}>Home</NavLink>
                     </li> 
@@ -52,16 +54,16 @@ const Navbar = () => {
                       <NavLink className="nav-link" aria-current="page" to={`/create`}>Create</NavLink>
                     </li>
                     <li className="nav-item">
-                      <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">                    
+                      <ul className="navbar-nav justify-content-end flex-grow-1">                    
                           <li className="nav-item dropdown">
-                              <NavLink className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Select Languages
+                              <NavLink className="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Languages <IoIosArrowDropdownCircle />
                               </NavLink>
                               <ul className="dropdown-menu">
                                 <li>
                                 {langauges.map((lang) => (                              
                                   <NavLink key={lang.code}
-                                    className={lang.code === i18n.language ? 'dropdown-item active' : 'dropdown-item'}
+                                    className={lang.code === i18n.language ? 'dropdown-item active text-center' : 'dropdown-item text-center'}
                                     onClick={()=>changeLanguage(lang.code)}
                                   >{lang.name}</NavLink>                                                         
                                 ))}  

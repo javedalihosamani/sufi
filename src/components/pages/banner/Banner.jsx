@@ -12,21 +12,21 @@ const Banner = () => {
             </div>
             <div className="carousel-inner">
                 <div className="carousel-item active">
-                    <img src={banner1} className="d-block w-100" alt="..." style={{height:'80vh'}}/>
+                    <img src={banner1} className="d-block w-100" alt="..." style={{height:'100vh'}}/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5>ಹಜರತ್ ಸೂಫಿ ಅಬ್ದುಲ್ ರೆಹಮಾನ್ ಶಾ ಬಾಬಾ</h5>
                         <p>ಬೆಳಪು</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner2} className="d-block w-100" alt="..." style={{height:'80vh'}}/>
+                    <img src={banner2} className="d-block w-100" alt="..." style={{height:'100vh'}}/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5>Second slide label</h5>
                         <p>Some representative placeholder content for the second slide.</p>
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src={banner3} className="d-block w-100" alt="..." style={{height:'80vh'}}/>
+                    <img src={banner3} className="d-block w-100" alt="..." style={{height:'100vh'}}/>
                     <div className="carousel-caption d-none d-md-block">
                         <h5>Third slide label</h5>
                         <p>Some representative placeholder content for the third slide.</p>

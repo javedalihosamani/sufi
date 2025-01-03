@@ -1,7 +1,15 @@
 import { Footer, Home, Navbar, Pnf } from "./components"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
+import sounds from './assets/subhanallha.mp3';
+import { useEffect } from "react";
 function App() {
-
+  function playAudio() {
+    const audio = new Audio(sounds);
+    audio ? audio.play() : audio.pause();
+    audio.loop = true;
+    audio.volume = 0.1;
+  }
+  useEffect(() => {playAudio()},[])
   return (
     <>
       <BrowserRouter>

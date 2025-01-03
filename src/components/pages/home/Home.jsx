@@ -2,8 +2,10 @@ import { useTranslation, Trans } from "react-i18next"
 
 const Home = () => {
     const {t} = useTranslation();
+    
     //const {line1, line2} = t('description',{channel: "Hazrat Sufi Abdul Rehman Shah Baba"});
-    const {line1, line2} = t('description',);
+    const {line1, line2} = t('description');
+    
   return (
     <>  
         {/* <div className="container mt-5">
@@ -126,6 +128,7 @@ const Home = () => {
                     />
                     </span>
                     <p>{line2}</p>
+                    
                 </div>
             </div>
         </div>
