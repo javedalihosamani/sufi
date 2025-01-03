@@ -1,6 +1,6 @@
 import { Footer, Home, Navbar, Pnf } from "./components"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import sounds from './assets/subhanallha.mp3';
+import sounds from './assets/allah.mp3';
 import { useEffect } from "react";
 function App() {
   function playAudio() {
